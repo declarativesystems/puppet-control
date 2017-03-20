@@ -23,3 +23,7 @@ mod 'geoffwilliams-name_service_switch', '0.1.0'
 mod 'saz-limits', '2.5.0'
 mod 'geoffwilliams-timezone', '0.1.1'
 
+
+
+# demo modules
+mod 'declarativesystems-puppet_vagrant', '0.1.0'
