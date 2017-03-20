@@ -1,0 +1,23 @@
+# Example YAML file containing batch updates for ncedit
+# To process these changes, on the puppet master do:
+# ncedit batch --filename /PATH/TO/THIS/FILE
+#
+# ncedit is idempotent so run the command as often as you like
+"PE Master":
+  "classes":
+    "puppet_enterprise::profile::master":
+      "code_manager_auto_configure": true
+      "r10k_private_key": "/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa"
+      "r10k_remote": "git@git.nib.com.au:puppetenterprise/puppet_enterprise-control.git"
+"PE PuppetDB":
+  "classes":
+    "puppet_enterprise::profile::puppetdb":
+      "node_purge_ttl": "0s"
+"Puppet Masters":
+  "classes":
+    "role::puppet::master": {}
+  "append_rules":
+    - "or"
+    - - "="
+      - "clientcert"
+      - "vmpump02.nibdom.com.au"
