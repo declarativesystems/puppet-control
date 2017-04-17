@@ -1,7 +1,7 @@
 forge 'forge.puppetlabs.com'
 
 mod 'r_role',
-  git =>'https://github.com/declarativesystems/r_role'
+  :git =>'https://github.com/declarativesystems/r_role'
 
 mod 'geoffwilliams-r_profile', '0.9.4'
 
